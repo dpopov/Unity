@@ -4,11 +4,12 @@ using System.Collections;
 public class Ball : MonoBehaviour {
 
 	// Use this for initialization
-	bool released = false;
-	Vector3 initialPositionOffset;
-	public Paddle paddle;
+	private bool released = false;
+	private Vector3 initialPositionOffset;
+	private Paddle paddle;
 
 	void Start () {
+		paddle = GameObject.FindObjectOfType<Paddle> ();
 		initialPositionOffset = transform.position-paddle.transform.position;	
 	}
 

@@ -8,6 +8,10 @@ public class LevelManager : MonoBehaviour {
 		Application.LoadLevel (name);
 	}
 
+	public void LoadNextLevel(){
+//		print( Scene.name ());
+	}
+
 	public void QuitRequest(){
 		Debug.Log ("Quit requested");
 		Application.Quit ();

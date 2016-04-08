@@ -2,9 +2,14 @@
 using System.Collections;
 
 public class LoseColider : MonoBehaviour {
-	public LevelManager levelManager;
+
+	private LevelManager levelManager;
+
+	void Start(){
+		levelManager = GameObject.FindObjectOfType<LevelManager> ();
+	}
 
 	void OnTriggerEnter2D(Collider2D collision){
-		levelManager.LoadLevel ("Win Screen");
+		levelManager.LoadLevel ("Lose Screen");
 	}
 }
