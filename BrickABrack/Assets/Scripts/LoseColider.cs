@@ -9,6 +9,8 @@ public class LoseColider : MonoBehaviour {
 		levelManager = GameObject.FindObjectOfType<LevelManager> ();
 	}
 
+
+
 	void OnTriggerEnter2D(Collider2D collision){
 		levelManager.LoadLevel ("Lose Screen");
 	}

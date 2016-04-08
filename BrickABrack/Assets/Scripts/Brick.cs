@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Brick : MonoBehaviour {
 
-	public int maxHits;
+	public Sprite[] hitStates;
 	int timesHit;
 
 	// Use this for initialization
@@ -12,15 +12,12 @@ public class Brick : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
-		print ("Got A Hit");
 		timesHit ++;
-		if (timesHit >= maxHits) {
+		if (timesHit >= hitStates.Length + 1) {
 			Destroy (gameObject);
+		} else {
+			this.GetComponent<SpriteRenderer>().sprite = hitStates[timesHit-1]; 
 		}
 	}
-
-	// Update is called once per frame
-	void Update () {
 	
-	}
 }
